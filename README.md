@@ -1,7 +1,7 @@
 # discord-bot
 
-[![NPM](https://img.shields.io/npm/v/@alvarocastro/backoff)](https://www.npmjs.com/package/@alvarocastro/backoff)
-[![Maintainability status](https://img.shields.io/codeclimate/maintainability/alvarocastro/backoff)](https://codeclimate.com/github/alvarocastro/backoff/maintainability)
+[![NPM](https://img.shields.io/npm/v/@alvarocastro/discord-bot)](https://www.npmjs.com/package/@alvarocastro/discord-bot)
+[![Maintainability status](https://img.shields.io/codeclimate/maintainability/alvarocastro/discord-bot)](https://codeclimate.com/github/alvarocastro/discord-bot/maintainability)
 [![Code style: XO](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
 Modular library to easily build powerful discord bots.
