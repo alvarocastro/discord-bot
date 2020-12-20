@@ -4,7 +4,7 @@
 [![Maintainability status](https://img.shields.io/codeclimate/maintainability/alvarocastro/backoff)](https://codeclimate.com/github/alvarocastro/backoff/maintainability)
 [![Code style: XO](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
-Core library to easily build powerful discord bots.
+Modular library to easily build powerful discord bots.
 
 - [Install](#install)
 - [Usage](#usage)

@@ -1,7 +1,7 @@
 {
   "name": "@alvarocastro/discord-bot",
-  "version": "0.0.2",
-  "description": "",
+  "version": "0.0.3",
+  "description": "Modular library to easily build discord bots",
   "main": "dist/index.js",
   "files": [
     "dist"
