@@ -1,12 +1,11 @@
-require('dotenv').config();
-
 import Bot from './bot';
+import Command from './command';
+import Memory from './memory';
 import commands from './commands';
 
-(async function () {
-	const bot = new Bot({
-		commands: commands
-	});
-
-	await bot.login(process.env.DISCORD_TOKEN);
-})();
+export default {
+	Bot,
+	Command,
+	Memory,
+	commands
+};

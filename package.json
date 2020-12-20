@@ -1,5 +1,5 @@
 {
-  "name": "discord-bot",
+  "name": "@alvarocastro/discord-bot",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
