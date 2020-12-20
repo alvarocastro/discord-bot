@@ -8,7 +8,7 @@ export default class Command {
 	}
 
 	check (message, args, memory) {
-		return false;
+		return true;
 	}
 
 	run (message, args, memory) {
