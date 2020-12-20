@@ -9,3 +9,8 @@ export default {
 	Memory,
 	commands
 };
+
+export { Bot };
+export { Command };
+export { Memory };
+export { commands };

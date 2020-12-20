@@ -21,14 +21,13 @@ export default class Bot {
 	}
 
 	async login (token) {
-		// await new Promise(async (resolve, reject) => {
+		await new Promise(async (resolve, reject) => {
 			await this.client.login(token);
 
-			// this.client.on('ready', () => {
-			// 	console.info(`Logged in as ${this.client.user.tag}!`);
-			// 	resolve();
-			// });
-		// });
+			this.client.on('ready', () => {
+				resolve();
+			});
+		});
 	}
 
 	async handleMessage (message) {
@@ -72,7 +71,6 @@ export default class Bot {
 		} catch (e) {
 			console.error(e);
 			message.reply('There was an error trying to execute that command!');
-			// message.channel.send('pepega');
 		}
 	}
 }
