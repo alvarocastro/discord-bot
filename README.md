@@ -8,7 +8,6 @@ Modular library to easily build powerful discord bots.
 
 - [Install](#install)
 - [Usage](#usage)
-- [Commands](#commands)
 - [Contributing](#contributing)
 - [Support](#support)
 
@@ -33,7 +32,7 @@ const bot = new Bot({
 bot.login('YOUR_DISCORD_TOKEN');
 ```
 
-You can pass an array of commands to the bot, the bot by itself has no commands but the library already comes with some simple commands (and boring) you can use, but you can easily build your own.
+You can pass an array of commands to the bot, the bot by itself has no commands but the library already comes with some simple (and boring) commands you can use, but you can easily build your own.
 
 Let's make a command to get cat images:
 
