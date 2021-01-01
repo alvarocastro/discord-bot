@@ -1,6 +1,6 @@
-import Command from '../command';
+import ChatCommand from '../chat-command';
 
-export default class PingCommand extends Command {
+export default class PingCommand extends ChatCommand {
 	constructor () {
 		super(...arguments);
 		this.name = 'ping';

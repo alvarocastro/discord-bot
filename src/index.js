@@ -1,16 +1,19 @@
 import Bot from './bot';
-import Command from './command';
+import ChatCommand from './chat-command';
+import ChatEvent from './chat-event';
 import Memory from './memory';
 import commands from './commands';
 
 export default {
 	Bot,
-	Command,
+	ChatEvent,
+	ChatCommand,
 	Memory,
 	commands
 };
 
 export { Bot };
-export { Command };
+export { ChatEvent };
+export { ChatCommand };
 export { Memory };
 export { commands };

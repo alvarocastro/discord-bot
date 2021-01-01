@@ -11,13 +11,16 @@ export default class Bot {
 		});
 
 		this.commands = new Collection();
+		this.events = new Collection();
 
 		if (options.commands?.length) {
-			for (const Command of options.commands) {
-				const command = new Command();
+			for (const CommandClass of options.commands) {
+				const command = new CommandClass();
 				this.commands.set(command.name, command);
 			}
 		}
+
+		this.events = options.events.map(EventClass => new EventClass);
 	}
 
 	async login (token) {
@@ -37,6 +40,13 @@ export default class Bot {
 		}
 
 		const memory = await this.memory.for(message.channel.guild.id);
+
+		for (const event of this.events) {
+			if (await event.check(message, memory)) {
+				event.action(message, memory);
+			}
+		}
+
 		const prefix = memory.get(['config', 'prefix']);
 
 		// Check if message starts with prefix

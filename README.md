@@ -38,9 +38,9 @@ Let's make a command to get cat images:
 
 ```js
 // commands/cat.js
-import { Command } from '@alvarocastro/discord-bot';
+import { ChatCommand } from '@alvarocastro/discord-bot';
 
-export default class CatCommand extends Command {
+export default class CatCommand extends ChatCommand {
 	constructor () {
 		super(...arguments);
 		this.name = 'cat'; // This will be used as the name to invoke the command, eg: !cat

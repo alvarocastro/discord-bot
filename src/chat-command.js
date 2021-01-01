@@ -1,4 +1,4 @@
-export default class Command {
+export default class ChatCommand {
 	constructor (name) {
 		this.name = name;
 	}

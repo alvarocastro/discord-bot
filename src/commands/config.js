@@ -1,6 +1,6 @@
-import Command from '../command';
+import ChatCommand from '../chat-command';
 
-export default class ConfigCommand extends Command {
+export default class ConfigCommand extends ChatCommand {
 	name = 'config';
 
 	check ({member}) {
