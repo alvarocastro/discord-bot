@@ -1,11 +1,10 @@
-import ChatCommand from '../chat-command';
+import { AdminChatCommand } from '../chat-command';
 
-export default class ConfigCommand extends ChatCommand {
+export default class ConfigCommand extends AdminChatCommand {
 	name = 'config';
-
-	check ({member}) {
-		return member.hasPermission('ADMINISTRATOR');
-	}
+	hidden = true;
+	format = '<prefix> <value>';
+	description = 'Configure the bot';
 
 	run ({channel}, [option, value], memory) {
 		if (option === 'prefix') {

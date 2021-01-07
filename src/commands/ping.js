@@ -1,15 +1,8 @@
-import ChatCommand from '../chat-command';
+import { ChannelChatCommand } from '../chat-command';
 
-export default class PingCommand extends ChatCommand {
-	constructor () {
-		super(...arguments);
-		this.name = 'ping';
-	}
-
-	check ({channel}, args, memory) {
-		const channelCommands = memory.get(['channels', channel.id, 'commands'], []);
-		return channelCommands.includes(this.name);
-	}
+export default class PingCommand extends ChannelChatCommand {
+	name = 'ping';
+	description = 'Measures the latency of the bot';
 
 	run (message) {
 		const timeTaken = Date.now() - message.createdTimestamp;

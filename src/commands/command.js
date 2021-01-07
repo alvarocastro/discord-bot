@@ -1,11 +1,10 @@
-import ChatCommand from '../chat-command';
+import { AdminChatCommand } from '../chat-command';
 
-export default class CommandCommand extends ChatCommand {
+export default class CommandCommand extends AdminChatCommand {
 	name = 'command';
-
-	check ({member}) {
-		return member.hasPermission('ADMINISTRATOR');
-	}
+	hidden = true;
+	format = '<allow|disallow> <command>';
+	description = 'Enables/disables the use of certain commands per channel';
 
 	run ({channel}, [action, command], memory) {
 		memory.default(['channels'], {

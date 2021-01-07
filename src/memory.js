@@ -37,17 +37,14 @@ export class GuildMemory {
 	}
 
 	get (path, value) {
-		console.log('Memory#get', path, value);
 		return this.db.get(path, value).value();
 	}
 
 	set (path, value) {
-		console.log('Memory#set', path, value);
 		this.db.set(path, value).write();
 	}
 
 	default (path, value) {
-		console.log('Memory#default', path, value);
 		this.db.get(path).defaultsDeep(value).write();
 	}
 }

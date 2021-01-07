@@ -11,16 +11,34 @@ export default class Bot {
 		});
 
 		this.commands = new Collection();
-		this.events = new Collection();
 
 		if (options.commands?.length) {
 			for (const CommandClass of options.commands) {
 				const command = new CommandClass();
+				command.bot = this;
 				this.commands.set(command.name, command);
 			}
 		}
 
-		this.events = options.events.map(EventClass => new EventClass);
+		if (options.events?.length) {
+			this.events = options.events.map(EventClass => new EventClass);
+		} else {
+			this.events = [];
+		}
+	}
+
+	get user () {
+		return this.client.user;
+	}
+
+	setInterval (fn, time, immediate = true) {
+		if (immediate) {
+			fn(this);
+		}
+		const newtime = Array.isArray(time) ? Math.floor(Math.random() * (time[1] - time[0])) + time[0] : time;
+		setTimeout(() => {
+			this.setInterval(fn, time, true);
+		}, newtime);
 	}
 
 	async login (token) {
