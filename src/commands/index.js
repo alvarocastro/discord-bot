@@ -3,9 +3,9 @@ import CommandCommand from './command';
 import ConfigCommand from './config';
 import HelpCommand from './help';
 
-export default [
+export default {
 	PingCommand,
 	CommandCommand,
 	ConfigCommand,
 	HelpCommand
-];
+};
