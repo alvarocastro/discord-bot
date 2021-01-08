@@ -69,7 +69,7 @@ export default class Bot {
 
 		// Check if message starts with prefix
 		if (!message.content.startsWith(prefix)) {
-			console.log('[handleMessage] Not a command');
+			// console.log('[handleMessage] Not a command');
 			return;
 		}
 
@@ -77,11 +77,11 @@ export default class Bot {
 		let [command, ...args] = message.content.substr(prefix.length).split(/ +/);
 		command = command.toLowerCase();
 
-		console.log(`[handleMessage] Received command "${command}" with args "${args.join(", ")}"`);
+		// console.log(`[handleMessage] Received command "${command}" with args "${args.join(", ")}"`);
 
 		// Check if the command exists
 		if (!this.commands.has(command)) {
-			console.log('[handleMessage] Command not found');
+			console.log(`[handleMessage] Command "${command}" not found`);
 			return;
 		}
 
@@ -95,9 +95,9 @@ export default class Bot {
 			}
 
 			console.log(`[handleMessage] Running command "${command}"!`);
-			this.commands.get(command).run(message, args, memory);
+			await this.commands.get(command).run(message, args, memory);
 		} catch (e) {
-			console.error(e);
+			console.error('[handleMessage] ERROR', e);
 			message.reply('There was an error trying to execute that command!');
 		}
 	}
